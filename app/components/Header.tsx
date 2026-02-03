@@ -18,9 +18,9 @@ function Header(){
     }
 
     return (
-        <header>
+        <div className="flex">
             <Link href="/">Logo</Link>
-            <div>
+            <div className="mx-auto">
                 <label
                     htmlFor="searchInput"
                 >
@@ -31,10 +31,10 @@ function Header(){
                     type="text"
                     placeholder="The Avengers, Star Wars, ..."
                     onChange={(e) => handleChange(e.target.value)}
-                    defaultValue={searchParams.get('s')?.toString()}
+                    defaultValue={searchParams.get('s')?.toString() || "" }
                 />
             </div>
-        </header>
+        </div>
     );
 }
 
