@@ -1,8 +1,8 @@
 function Footer(){
     return (
-        <footer>
-            <p>@Copyright</p>
-        </footer>  
+        <div className="flex">
+            <p className="mx-auto">@Copyright</p>
+        </div>  
     );
 }
 

@@ -5,31 +5,37 @@ import { ContentList } from "../lib/definitions";
 const STATIC_URL = "http://www.omdbapi.com/?apikey=d28c0766";
 
 async function Page(props: {
-    searchParamas?: Promise<{
+    searchParams?: Promise<{
         s?: string, 
-    }>
+    }>,
+    params: Promise<{searchType: string}>
 }){
-    const searchParams = await props.searchParamas;
+    const searchParams = await props.searchParams;
     const s = searchParams?.s || "";
-    const type = "";
 
-    const url = `${STATIC_URL}&${s}&${type}`;
+    const params = await props.params;
+    const type = params.searchType !== 'all' ? params.searchType : "";
+    console.log(type);
+
+    const url = `${STATIC_URL}&s=${s}&type=${type}`;
     const results: ContentList = await fetchContent(url);
+    console.log(results.length)
+    
     return (
-        <main>
+        <div>
             <ul>
                 {results.map(res => (
                     <li key={res.id}>
                         <p>{res.title}</p>
                         <p>{res.year}</p>
-                        <Image
+                        <img
                             src={res.img}
                             alt={res.title}
                         />
                     </li>
                 ))}
             </ul>
-        </main>
+        </div>
     );
 }
 

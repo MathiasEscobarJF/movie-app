@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const links = [
     {
         title: "All",
-        href: "/",
+        href: "/all",
     },
     {
         title: "Movies",
-        href: "/movies",     
+        href: "/movie",     
     },
     {
         title: "Series",
@@ -21,26 +21,26 @@ const links = [
 
 function NavBar(){
     const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const s = searchParams?.get("s") || "";
 
     return (
-        <nav>
-            <ul>
-                {links.map(link => (
-                    <li
-                        key={link.title}
+        <ul className="flex justify-center mx -auto">
+            {links.map(link => (
+                <li
+                    key={link.title}
+                >
+                    <Link
+                        href={`${link.href}?s=${s}`}
+                        className={clsx({
+                            "underline": pathname === link.href,
+                        })}
                     >
-                        <Link
-                            href={link.href}
-                            className={clsx({
-                                "underline": pathname === link.href,
-                            })}
-                        >
-                            {link.title}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+                        {link.title}
+                    </Link>
+                </li>
+            ))}
+        </ul>
     );
 }
 

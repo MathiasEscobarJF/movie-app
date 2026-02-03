@@ -15,12 +15,26 @@ function RootLayout({children}: {
   return (
     <html lang="en">
       <body
-        className="antialiased"
+        className="flex flex-col min-h-lvh text-amber-50 antialiased"
       >
-        <Header />
-        <NavBar />
-        {children}
-        <Footer />
+        <header className="bg-violet-700">
+          <div className="w-[min(100%,1200px)] m-auto">
+            <Header />
+          </div>
+        </header>
+        <nav className="bg-violet-700">
+          <div className="w-[min(100%,1200px)] m-auto">
+            <NavBar />
+          </div>
+        </nav>
+        <main className="flex-1 bg-violet-950">
+          {children}
+        </main>
+        <footer className="bg-black">
+          <div className="w-[min(100%,1200px)] m-auto">
+            <Footer />
+          </div>
+        </footer>
       </body>
     </html>
   );
