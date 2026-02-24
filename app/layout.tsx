@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from "@/app/components/NavBar";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,26 +12,9 @@ function RootLayout({children}: {
   return (
     <html lang="en">
       <body
-        className="flex flex-col min-h-lvh text-amber-50 antialiased"
+        className={"antialiased"}
       >
-        <header className="bg-violet-700">
-          <div className="w-[min(100%,1200px)] m-auto">
-            <Header />
-          </div>
-        </header>
-        <nav className="bg-violet-700">
-          <div className="w-[min(100%,1200px)] m-auto">
-            <NavBar />
-          </div>
-        </nav>
-        <main className="flex-1 bg-violet-950">
-          {children}
-        </main>
-        <footer className="bg-black">
-          <div className="w-[min(100%,1200px)] m-auto">
-            <Footer />
-          </div>
-        </footer>
+        {children}
       </body>
     </html>
   );
