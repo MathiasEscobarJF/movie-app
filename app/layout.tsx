@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SearchInput from "@/app/ui/SearchInput";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ function RootLayout({children}: {
       <body
         className={"antialiased"}
       >
+        <SearchInput />
         {children}
       </body>
     </html>
