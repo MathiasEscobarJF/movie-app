@@ -22,7 +22,7 @@ function SearchInput(){
 
     return (
         <div>
-            <label htmlFor="">Buscar por título:</label>
+            <label htmlFor="">Search by title:</label>
             <input 
                 type="text" 
                 placeholder="The Avengers, Star Wars, ..."
