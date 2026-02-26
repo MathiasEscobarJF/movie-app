@@ -1,8 +1,8 @@
 function RenderErrorMessage(){
     return (
         <>
-            <p>Something went wrong</p>
-            <p>Please enter a title or try another search.</p>
+            <p>No results found</p>
+            <p>Please complete the title or try another search</p>
         </>
     );
 }
