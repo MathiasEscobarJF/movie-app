@@ -27,6 +27,7 @@ function SearchInput(){
                 type="text" 
                 placeholder="The Avengers, Star Wars, ..."
                 onChange={(e) => handleChange(e.target.value)}
+                defaultValue={searchParams.get('s')?.toString()}
             />
         </div>
     );

@@ -8,7 +8,7 @@ interface RawResultWithError {
 
 interface RawResultWithSearch {
     Search: RawContent[],
-    totalResults: "63",
+    totalResults: string,
     Response: "True",
 }
 
@@ -30,7 +30,7 @@ interface ResultWithError {
 
 interface ResultWithSearch {
     search: Content[],
-    totalResults: "63",
+    totalResults: number,
     response: true,
 }
 

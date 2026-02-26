@@ -9,7 +9,7 @@ function ContentItem({content}: {
             <p>{content.title}</p>
             <p>{content.type}</p>
             <p>{content.year}</p>
-            <Image
+            <img
                 src={content.poster}
                 alt={content.title}
             />
