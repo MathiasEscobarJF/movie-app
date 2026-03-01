@@ -16,7 +16,7 @@ async function Home(props: {
         <SearchInput />
         {s === ""
           ? (
-            <h1>Welcome! Enter a title to search.</h1>
+            <h1>Welcome! Enter a title to search</h1>
           )
           : (
             <Suspense fallback={<RenderResultSkeleton />}>

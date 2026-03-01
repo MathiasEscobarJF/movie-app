@@ -5,20 +5,21 @@ import {
     usePathname, 
     useRouter 
 } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 
 function SearchInput(){
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const {replace} = useRouter();
 
-    function handleChange(value: string){
+    const handleChange = useDebouncedCallback((value: string) => {
         const params = new URLSearchParams(searchParams);
         if(value)
             params.set('s',value);
         else
             params.delete('s');
         replace(`${pathname}?${params.toString()}`);
-    }
+    },300);
 
     return (
         <div>
