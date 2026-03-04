@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SearchInput from "./ui/SearchInput";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,13 @@ function RootLayout({children}: {
       <body
         className={"antialiased"}
       >
+        <header>
+          <SearchInput />
+        </header>
         {children}
+        <footer>
+          <p>Movie search application developed using the OMDb API by Mathias Escobar</p>
+        </footer>
       </body>
     </html>
   );
