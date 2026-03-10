@@ -16,20 +16,20 @@ interface RawContent {
     Title: string,
     Year: string,
     imdbID: string,
-    Type: "movie" | "series",
+    Type: string,
     Poster: string, 
 }
 
 //Mapped types
-export type Result = ResultWithSearch | ResultWithError;
+export type Result = ResultWithContent | ResultWithError;
 
 interface ResultWithError {
     response: false;
     error: string,
 }
 
-interface ResultWithSearch {
-    search: Content[],
+interface ResultWithContent {
+    contentList: Content[],
     totalResults: number,
     response: true,
 }

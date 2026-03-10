@@ -1,6 +1,8 @@
-function RenderResultSkeleton(){
+function RenderResultSkeleton(){   
     return (
-        <p>Loading content ...</p>
+        <div className="text-center">
+            <p className="text-4xl font-bold">Loading content ...</p>
+        </div>
     );
 }
 

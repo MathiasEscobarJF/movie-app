@@ -15,11 +15,13 @@ async function fetchResult(s: string,page: string | number){
         }
     }else{
         mappedResult = {
-            search: rawResult.Search.map(s => ({
+            contentList: rawResult.Search
+                .filter(s => (s.Type === "movie" || s.Type === "series"))
+                .map(s => ({
                 title: s.Title,
                 year: s.Year,
                 id: s.imdbID,
-                type: s.Type,
+                type: s.Type as "movie" | "series",
                 poster: s.Poster, 
             })),
             totalResults: parseInt(rawResult.totalResults,10),

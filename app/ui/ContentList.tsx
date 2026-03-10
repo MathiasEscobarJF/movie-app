@@ -5,7 +5,9 @@ function ContentList({contentList}: {
     contentList: Content[],
 }){
     return (
-        <ul>
+        <ul
+            className="w-full grid grid-cols-[repeat(auto-fit,minmax(316px,1fr))] auto-rows-fr gap-3"
+        >
             {contentList.map(content => (
                 <li 
                     key={content.id}
