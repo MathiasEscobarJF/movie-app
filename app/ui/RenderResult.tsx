@@ -14,12 +14,17 @@ async function RenderResult({s,page}: {
         <>
             {result.response
                 ? (
-                    <>
-                        <ContentList contentList={result.search} />
-                        <Pagination totalPages={Math.ceil(result.totalResults / 10)} />
-                    </>
+                    <div className="flex flex-col gap-6 items-center mb-9">
+                        <p className="text-center text-4xl font-bold mb-6">{`Results for: ${s}`}</p>
+                        <ContentList contentList={result.contentList} />
+                        <Pagination 
+                            currentPage={Number(page)} 
+                            totalPages={Math.ceil(result.totalResults / 10)} />
+                    </div>
                 )
-                : <RenderErrorMessage />
+                : (
+                    <RenderErrorMessage search={s}/>
+                )
             }
         </>
     );

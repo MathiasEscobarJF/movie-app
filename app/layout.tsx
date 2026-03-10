@@ -12,14 +12,12 @@ function RootLayout({children}: {
 }) {
   return (
     <html lang="en">
-      <body
-        className={"antialiased"}
-      >
-        <header>
+      <body className="min-h-screen flex flex-col text-amber-50 antialiased">
+        <header className="bg-violet-500 flex justify-center p-3">
           <SearchInput />
         </header>
         {children}
-        <footer>
+        <footer className="mt-auto bg-black text-center py-3">
           <p>Movie search application developed using the OMDb API by Mathias Escobar</p>
         </footer>
       </body>

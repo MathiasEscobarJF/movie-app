@@ -3,13 +3,13 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 
-function Pagination({totalPages}:{
+function Pagination({currentPage,totalPages}:{
+    currentPage: number,
     totalPages: number,
 }){
 
     const searchParams = useSearchParams();
     const pathname = usePathname();
-    const currentPage = Number(searchParams.get('page')) || 1;
 
     const createPageURL = (pageNumber: number | string) => {
         const params = new URLSearchParams(searchParams);
@@ -18,13 +18,13 @@ function Pagination({totalPages}:{
     }
 
     return (
-        <div>
+        <div className="flex gap-2">
             <PaginationArrow
                 direction="left"
                 href={createPageURL(currentPage - 1)}
                 isDisable={currentPage <= 1}
             />
-            <div>
+            <div className="w-15 h-10 bg-amber-50 text-black flex justify-center items-center">
                 {currentPage}
             </div>
             <PaginationArrow
@@ -45,12 +45,11 @@ function PaginationArrow({direction,href,isDisable}: {
 }){
     const title = direction === "left" ? "Back" : "Next";
     return isDisable ? (
-        <div>
-            {title}
-        </div>
+        <div className="w-15 h-10 bg-gray-500 text-black flex justify-center items-center rounded-lg">{title}</div>
     ) : (
-        <Link
+        <Link 
             href={href}
+            className="w-15 h-10 bg-yellow-500 text-black flex justify-center items-center rounded-lg"
         >
             {title}
         </Link>
