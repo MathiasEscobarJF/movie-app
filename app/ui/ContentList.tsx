@@ -1,8 +1,9 @@
 import type { Content } from "@/app/lib/definitions"
 import ContentItem from "@/app/ui/ContentItem";
 
-function ContentList({contentList}: {
+function ContentList({contentList,isTyped}: {
     contentList: Content[],
+    isTyped: boolean,
 }){
     return (
         <ul
@@ -12,7 +13,10 @@ function ContentList({contentList}: {
                 <li 
                     key={content.id}
                 >
-                    <ContentItem content={content} />
+                    <ContentItem 
+                        content={content} 
+                        isTyped={isTyped}    
+                    />
                 </li>
             ))}
         </ul>
