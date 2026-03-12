@@ -20,7 +20,10 @@ function SearchInput(){
             params.set('s',value);
         else
             params.delete('s');
-        replace(`${pathname}?${params.toString()}`);
+        if(pathname === "/")
+            replace(`${pathname}all?${params.toString()}`);
+        else
+            replace(`${pathname}?${params.toString()}`);
     },300);
 
     return (
@@ -30,7 +33,7 @@ function SearchInput(){
                 className="flex gap-1 px-3 py-1"
             >
                 <MagnifyingGlassIcon className="w-6"/>
-                <span className="hidden sm:block">Search by title</span>
+                <span className="hidden md:block">Search by title</span>
             </label>
             <input
                 id="searchInput"
