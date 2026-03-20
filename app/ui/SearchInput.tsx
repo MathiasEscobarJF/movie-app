@@ -30,10 +30,10 @@ function SearchInput(){
         <div className="flex h-11 items-center bg-violet-950 rounded-4xl border-2 border-violet-950">
             <label 
                 htmlFor="searchInput"
-                className="flex gap-1 px-3 py-1"
+                className="flex gap-1 px-5 py-2"
             >
                 <MagnifyingGlassIcon className="w-6"/>
-                <span className="hidden md:block">Search by title</span>
+                <span className="hidden sm:block">Search by title</span>
             </label>
             <input
                 id="searchInput"
