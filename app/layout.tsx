@@ -25,8 +25,8 @@ function RootLayout({children}: {
               className="p-2 flex border-2 border-transparent rounded-lg hover:border-amber-50 active:opacity-80"
             >
               <ChevronLeftIcon className="w-6" />
-              <HomeIcon className="w-6 md:hidden"/>
-              <p className="hidden md:block">Go to Home</p>
+              <HomeIcon className="w-6"/>
+              <p className="hidden lg:block ml-2">Go to Home</p>
             </Link>
           </div>
           <Suspense>

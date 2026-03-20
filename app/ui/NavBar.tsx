@@ -30,7 +30,7 @@ function NavBar(){
                     <Link 
                         href={`${link.href}?${searchParams.toString()}`}
                         className={clsx(
-                            "w-20 h-11 p-2 flex justify-center items-center rounded-lg hover:outline-2 hover:outline-offset-3 active:opacity-80", 
+                            "w-20 h-11 p-2 flex justify-center items-center rounded-lg lg:hover:outline-2 lg:hover:outline-offset-3 active:opacity-80", 
                             {
                                 "bg-violet-950 hover:outline-violet-950": pathname !== link.href,
                                 "bg-amber-50 text-violet-950 hover:outline-amber-50": pathname === link.href,
