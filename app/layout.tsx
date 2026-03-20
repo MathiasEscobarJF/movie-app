@@ -4,6 +4,7 @@ import SearchInput from "./ui/SearchInput";
 import NavBar from "@/app/ui/NavBar";
 import Link from "next/link";
 import { HomeIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Movie App",
@@ -28,7 +29,9 @@ function RootLayout({children}: {
               <p className="hidden md:block">Go to Home</p>
             </Link>
           </div>
-          <SearchInput />
+          <Suspense>
+            <SearchInput />
+          </Suspense>
           <NavBar />
         </header>
         <main className="bg-violet-900 flex-1 xl:px-65 pt-9">
