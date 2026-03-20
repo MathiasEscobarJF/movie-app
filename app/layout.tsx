@@ -22,7 +22,7 @@ function RootLayout({children}: {
           <div className="w-full flex md:w-fit md:block md:absolute md:left-3">
             <Link
               href="/"
-              className="p-2 flex border-2 border-transparent rounded-lg hover:border-amber-50 active:opacity-80"
+              className="p-2 flex border-2 border-transparent rounded-lg lg:hover:border-amber-50 active:opacity-80"
             >
               <ChevronLeftIcon className="w-6" />
               <HomeIcon className="w-6"/>
