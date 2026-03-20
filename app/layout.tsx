@@ -31,8 +31,8 @@ function RootLayout({children}: {
           </div>
           <Suspense>
             <SearchInput />
+            <NavBar />
           </Suspense>
-          <NavBar />
         </header>
         <main className="bg-violet-900 flex-1 xl:px-65 pt-9">
           {children}
