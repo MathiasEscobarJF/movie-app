@@ -19,7 +19,7 @@ function RootLayout({children}: {
           {children}
         </main>
         <footer className="mt-auto bg-black text-center py-3">
-          <p>Movie search application developed using the OMDb API by Mathias Escobar</p>
+          <p className="text-pretty">Movie search application developed using the OMDb API by Mathias Escobar</p>
         </footer>
       </body>
     </html>
