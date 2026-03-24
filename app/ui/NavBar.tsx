@@ -3,8 +3,13 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
+import { HomeIcon } from "@heroicons/react/20/solid";
 
 const links = [
+    {
+        name: "Home",
+        href: "/"
+    },
     {
         name: "All",
         href: "/all",
@@ -24,20 +29,20 @@ function NavBar(){
     const pathname = usePathname();
 
     return (
-        <ul className="flex gap-4">
+        <ul className="flex gap-2 sm:gap-4 w-fit">
             {links.map(link => (
                 <li key={link.name}>
                     <Link 
                         href={`${link.href}?${searchParams.toString()}`}
                         className={clsx(
-                            "w-20 h-11 p-2 flex justify-center items-center rounded-lg lg:hover:outline-2 lg:hover:outline-offset-3 active:opacity-80", 
+                            "aspect-video w-16 sm:w-20 p-2 flex justify-center items-center rounded-lg lg:hover:outline-2 lg:hover:outline-offset-3 active:opacity-80", 
                             {
                                 "bg-violet-950 hover:outline-violet-950": pathname !== link.href,
                                 "bg-amber-50 text-violet-950 hover:outline-amber-50": pathname === link.href,
                             },
                         )}
                     >
-                        {link.name}
+                        {link.name === "Home" ? <HomeIcon className="w-6" /> : link.name}
                     </Link>
                 </li>
             ))}

@@ -1,4 +1,4 @@
-import RenderResultSkeleton from "@/app/ui/RenderResultSkeleton";
+import RenderResultSkeleton from "@/app/ui/type/RenderResultSkeleton";
 
 function loadingPage(){
     return (

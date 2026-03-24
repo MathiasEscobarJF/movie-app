@@ -1,5 +1,5 @@
 import type { Content } from "@/app/lib/definitions"
-import ContentItem from "@/app/ui/ContentItem";
+import ContentItem from "@/app/ui/type/ContentItem";
 
 function ContentList({contentList,isTyped}: {
     contentList: Content[],
