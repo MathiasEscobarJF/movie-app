@@ -1,6 +1,4 @@
-import { Suspense } from "react";
-import RenderResultSkeleton from "@/app/ui/RenderResultSkeleton";
-import RenderResult from "@/app/ui/RenderResult";
+import RenderResult from "@/app/ui/type/RenderResult";
 
 async function Page(props: {
     params: Promise<{type: string}>

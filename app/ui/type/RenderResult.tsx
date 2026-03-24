@@ -1,8 +1,8 @@
 import type { Result } from "@/app/lib/definitions";
 import fetchResult from "@/app/lib/fetchResult";
-import ContentList from "@/app/ui/ContentList";
-import RenderErrorMessage from "@/app/ui/RenderErrorMessage";
-import Pagination from "./Pagination";
+import ContentList from "@/app/ui/type/ContentList";
+import RenderErrorMessage from "@/app/ui/type/RenderErrorMessage";
+import Pagination from "@/app/ui/type/Pagination";
 
 async function RenderResult({s,type,page}: {
     s: string,
