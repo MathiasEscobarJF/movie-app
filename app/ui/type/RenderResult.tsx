@@ -11,12 +11,20 @@ async function RenderResult({s,type,page}: {
 }){
     const result: Result = await fetchResult({s,type,page});
 
+    let contentType = "";
+    if(type === "series")
+        contentType = "Series";
+    else if(type === "movie")
+        contentType = "Movies";
+    else
+        contentType = "Results";
+
     return (
         <>
             {result.response
                 ? (
                     <div className="flex flex-col gap-6 items-center mb-9">
-                        <p className="text-center text-4xl font-bold mb-6 text-pretty">{`Results for: ${s}`}</p>
+                        <p className="text-center text-4xl font-bold mb-6">{`${contentType} for: ${s}`}</p>
                         <ContentList 
                             contentList={result.contentList}
                             isTyped={type === "movie" || type === "series"} 
@@ -27,7 +35,10 @@ async function RenderResult({s,type,page}: {
                     </div>
                 )
                 : (
-                    <RenderErrorMessage search={s}/>
+                    <RenderErrorMessage 
+                        search={s} 
+                        contentType={contentType}
+                    />
                 )
             }
         </>
